@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.javafxcalculator.controller.AdminController"
+      style="-fx-background-color: linear-gradient(to bottom, #fff9fb, #fff0f5);"
+      spacing="15" alignment="CENTER">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+
+    <Label text="Панель администратора"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #d14d82;"/>
+
+    <TableView fx:id="usersTable" prefHeight="400" prefWidth="600"
+               style="-fx-background-radius: 5; -fx-border-radius: 5;">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="100"/>
+            <TableColumn fx:id="usernameColumn" text="Имя пользователя" prefWidth="250"/>
+            <TableColumn fx:id="roleColumn" text="Роль" prefWidth="250"/>
+        </columns>
+
+    </TableView>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Удалить" onAction="#deleteUser"
+                style="-fx-font-size: 14; -fx-min-width: 120; -fx-min-height: 35;
+                       -fx-background-color: #ffffff, #ffebf1; -fx-background-insets: 0, 1;
+                       -fx-background-radius: 5; -fx-border-radius: 5;
+                       -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.2), 5, 0.2, 0, 1);
+                       -fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+
+        <Button text="Редактировать" onAction="#editUser"
+                style="-fx-font-size: 14; -fx-min-width: 120; -fx-min-height: 35;
+                       -fx-background-color: #ffffff, #ffebf1; -fx-background-insets: 0, 1;
+                       -fx-background-radius: 5; -fx-border-radius: 5;
+                       -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.2), 5, 0.2, 0, 1);
+                       -fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+    </HBox>
+</VBox>

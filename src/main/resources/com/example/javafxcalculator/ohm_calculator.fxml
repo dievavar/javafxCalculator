@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15" xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxcalculator.controller.OhmLawController"
+      style="-fx-background-color: linear-gradient(to bottom, #fff9fb, #fff0f5);">
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30"/>
+    </padding>
+
+    <Text text="Калькулятор закона Ома" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #d14d82;">
+        <font>
+            <Font name="System Bold" size="24"/>
+        </font>
+    </Text>
+
+    <GridPane hgap="15" vgap="15" alignment="CENTER">
+        <Label text="Напряжение (V):" GridPane.columnIndex="0" GridPane.rowIndex="0"
+               style="-fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+        <TextField fx:id="voltageField" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                   style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5;
+                          -fx-border-color: #ffcce0; -fx-border-width: 1;
+                          -fx-pref-width: 200; -fx-pref-height: 30;
+                          -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.1), 3, 0.2, 0, 1);"/>
+
+        <Label text="Ток (I):" GridPane.columnIndex="0" GridPane.rowIndex="1"
+               style="-fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+        <TextField fx:id="currentField" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                   style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5;
+                          -fx-border-color: #ffcce0; -fx-border-width: 1;
+                          -fx-pref-width: 200; -fx-pref-height: 30;
+                          -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.1), 3, 0.2, 0, 1);"/>
+
+        <Label text="Сопротивление (R):" GridPane.columnIndex="0" GridPane.rowIndex="2"
+               style="-fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+        <TextField fx:id="resistanceField" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                   style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5;
+                          -fx-border-color: #ffcce0; -fx-border-width: 1;
+                          -fx-pref-width: 200; -fx-pref-height: 30;
+                          -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.1), 3, 0.2, 0, 1);"/>
+    </GridPane>
+
+    <Button text="Рассчитать" onAction="#calculate"
+            style="-fx-font-size: 14; -fx-font-weight: bold; -fx-min-width: 150; -fx-min-height: 35;
+                   -fx-background-color: #ffffff, #ffebf1; -fx-background-insets: 0, 1;
+                   -fx-background-radius: 5; -fx-border-radius: 5;
+                   -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.2), 5, 0.2, 0, 1);
+                   -fx-text-fill: #d14d82;"/>
+
+    <Label fx:id="resultLabel" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #d14d82; -fx-wrap-text: true;"/>
+    <Label fx:id="errorLabel" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-wrap-text: true;"/>
+
+    <Button text="Показать историю" onAction="#showHistory"
+            style="-fx-font-size: 14; -fx-min-width: 150; -fx-min-height: 35;
+                   -fx-background-color: #ffffff, #ffebf1; -fx-background-insets: 0, 1;
+                   -fx-background-radius: 5; -fx-border-radius: 5;
+                   -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.2), 5, 0.2, 0, 1);
+                   -fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+
+    <Button text="Назад" onAction="#goBack"
+            style="-fx-font-size: 12; -fx-text-fill: #d14d82;
+                   -fx-background-color: transparent; -fx-underline: true;
+                   -fx-padding: 5 10 5 10; -fx-cursor: hand;"/>
+</VBox>

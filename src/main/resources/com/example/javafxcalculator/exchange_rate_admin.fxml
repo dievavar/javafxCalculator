@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.javafxcalculator.controller.ExchangeRateAdminController"
+      spacing="20"
+      alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #fff9fb, #fff0f5);">
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30"/>
+    </padding>
+
+    <Label text="Управление курсами валют"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #d14d82;"/>
+
+    <TableView fx:id="ratesTable" prefHeight="400" prefWidth="700"
+               style="-fx-background-radius: 5; -fx-border-radius: 5;">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="80"/>
+            <TableColumn fx:id="fromColumn" text="Из валюты" prefWidth="200"/>
+            <TableColumn fx:id="toColumn" text="В валюту" prefWidth="200"/>
+            <TableColumn fx:id="rateColumn" text="Курс" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Добавить" onAction="#addRate"
+                style="-fx-font-size: 14; -fx-min-width: 120; -fx-min-height: 35;
+                       -fx-background-color: #ffffff, #ffebf1; -fx-background-insets: 0, 1;
+                       -fx-background-radius: 5; -fx-border-radius: 5;
+                       -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.2), 5, 0.2, 0, 1);
+                       -fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+
+        <Button text="Редактировать" onAction="#editRate"
+                style="-fx-font-size: 14; -fx-min-width: 120; -fx-min-height: 35;
+                       -fx-background-color: #ffffff, #ffebf1; -fx-background-insets: 0, 1;
+                       -fx-background-radius: 5; -fx-border-radius: 5;
+                       -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.2), 5, 0.2, 0, 1);
+                       -fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+
+        <Button text="Удалить" onAction="#deleteRate"
+                style="-fx-font-size: 14; -fx-min-width: 120; -fx-min-height: 35;
+                       -fx-background-color: #ffffff, #ffebf1; -fx-background-insets: 0, 1;
+                       -fx-background-radius: 5; -fx-border-radius: 5;
+                       -fx-effect: dropshadow(gaussian, rgba(209,77,130,0.2), 5, 0.2, 0, 1);
+                       -fx-text-fill: #d14d82; -fx-font-weight: bold;"/>
+    </HBox>
+</VBox>

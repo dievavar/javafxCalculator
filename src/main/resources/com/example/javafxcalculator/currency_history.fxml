@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.javafxcalculator.controller.CurrencyHistoryController"
+      spacing="15" alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #fff9fb, #fff0f5);">
+
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30"/>
+    </padding>
+
+    <Label text="История конвертаций"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #d14d82;"/>
+
+    <TableView fx:id="historyTable" prefHeight="400" prefWidth="600"
+               style="-fx-background-radius: 5; -fx-border-radius: 5;">
+        <columns>
+            <TableColumn text="Пользователь" fx:id="usernameColumn" prefWidth="150"/>
+            <TableColumn text="Из" fx:id="fromColumn" prefWidth="100"/>
+            <TableColumn text="В" fx:id="toColumn" prefWidth="100"/>
+            <TableColumn text="Сумма" fx:id="amountColumn" prefWidth="120"/>
+            <TableColumn text="Результат" fx:id="resultColumn" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <Button text="Назад" onAction="#goBack"
+            style="-fx-font-size: 12; -fx-text-fill: #d14d82;
+                   -fx-background-color: transparent; -fx-underline: true;
+                   -fx-padding: 5 10 5 10; -fx-cursor: hand;"/>
+</VBox>
